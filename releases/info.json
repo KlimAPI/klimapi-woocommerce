@@ -1,10 +1,10 @@
 {
-  "name" : "KlimAPI WooCommerce",
-  "slug" : "klimapi-woocommerce",
+  "name" : "KlimAPI - Calculate & Compensate CO2 Emissions at Checkout",
+  "slug" : "klimapi",
   "author" : "KlimAPI Team",
   "author_profile" : "https://profiles.wordpress.org/emilow/",
   "version" : "1.0.0",
-  "download_url" : "https://github.com/KlimAPI/klimapi-woocommerce/releases/latest/download/klimapi-woocommerce.zip",
+  "download_url" : "https://github.com/KlimAPI/klimapi-woocommerce/releases/latest/download/klimapi.zip",
   "requires" : "5.4",
   "tested" : "6.3",
   "requires_php" : "7.4",

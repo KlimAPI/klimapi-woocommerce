@@ -1,67 +1,66 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: KlimAPI - Calculate & Compensate CO2 Emissions at "
 "Checkout\n"
 "POT-Creation-Date: 2023-08-20 11:13+0200\n"
-"PO-Revision-Date: 2023-08-20 11:19+0200\n"
+"PO-Revision-Date: 2023-08-20 11:13+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "X-Generator: Poedit 3.3.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: klimapi.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
-"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 
 #: admin/class-klimapi-admin.php:181
 msgid "Authentication"
-msgstr "Authentifizierung"
+msgstr ""
 
 #: admin/class-klimapi-admin.php:185
 msgid ""
 "Please enter your API Key and Shop Ident. You can find them in your KlimAPI "
 "account."
 msgstr ""
-"Bitte gib deinen API-Schlüssel und dein Shop-Ident ein. Du kannst sie in "
-"deinem KlimAPI-Konto finden."
 
 #: admin/class-klimapi-admin.php:191
 msgid "API Key"
-msgstr "API-Schlüssel"
+msgstr ""
 
 #: admin/class-klimapi-admin.php:199
 msgid "Shop Ident"
-msgstr "Shop-Ident"
+msgstr ""
 
 #: admin/partials/klimapi-admin-display.php:17
 msgid "KlimAPI - CO2 Compensation for WooCommerce Shops"
-msgstr "KlimAPI - CO2-Kompensation für WooCommerce Shops"
+msgstr ""
 
 #: public/partials/klimapi-public-display.php:26
 msgid "Offset your purchase:"
-msgstr "Kompensiere deinen Einkauf:"
+msgstr ""
 
 #: public/partials/klimapi-public-display.php:27
 #, php-format
 msgid "We pay %d%% of the compensation"
-msgstr "Wir zahlen %d%% der Kompensation"
+msgstr ""
 
 #: public/partials/klimapi-public-display.php:29
 msgid "We pay the entire compensation"
-msgstr "Wir zahlen die gesamte Kompensation"
+msgstr ""
 
 #: public/partials/klimapi-public-thankyou.php:47
 msgid "The earth thanks you!"
-msgstr "Die Erde dankt dir!"
+msgstr ""
 
 #: public/partials/klimapi-public-thankyou.php:49
 #, php-format
@@ -70,34 +69,29 @@ msgid ""
 "compensation of <b>%1$s kg CO<sub>2</sub>e</b> will benefit the <b>%2$s</b> "
 "project. "
 msgstr ""
-"Vielen Dank für deinen Beitrag zu einem nachhaltigeren Planeten. Deine "
-"Kompensation von <b>%1$s kg CO<sub>2</sub>e</b> kommt dem Projekt <b>%2$s</"
-"b> zugute. "
 
 #: public/partials/klimapi-public-thankyou.php:50
 msgid "Open Certificate"
-msgstr "Zertifikat öffnen"
+msgstr ""
 
 #. Plugin Name of the plugin/theme
 msgid "KlimAPI - Calculate & Compensate CO2 Emissions at Checkout"
-msgstr "KlimAPI - CO2-Emissionen im Checkout berechnen und kompensieren"
+msgstr ""
 
 #. Plugin URI of the plugin/theme
 msgid "https://klimapi.com/resources/plugins/woocommerce"
-msgstr "https://klimapi.com/de/resources/plugins/woocommerce"
+msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
 "Calculate and compensate the unavoidable CO2 emissions of your products and "
 "services together with your customers."
 msgstr ""
-"Berechne und kompensiere gemeinsam mit deinen Kunden die unvermeidbaren CO2-"
-"Emissionen deiner Produkte und Dienstleistungen."
 
 #. Author of the plugin/theme
 msgid "KlimAPI Team"
-msgstr "KlimAPI Team"
+msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://klimapi.com"
-msgstr "https://klimapi.com"
+msgstr ""
