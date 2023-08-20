@@ -1,13 +1,6 @@
 <?php
 
 /**
- * The plugin bootstrap file
- *
- * This file is read by WordPress to generate the plugin information in the plugin
- * admin area. This file also includes all of the dependencies used by the plugin,
- * registers the activation and deactivation functions, and defines a function
- * that starts the plugin.
- *
  * @link              https://klimapi.com
  * @since             1.0.0
  * @package           Klimapi_Woocommerce
@@ -38,8 +31,8 @@ if (! defined('WPINC')) {
 define('KLIMAPI_WOOCOMMERCE_VERSION', '1.0.0');
 
 
-define('KLIMAPI_WOOCOMMERCE_API_ENDPOINT', 'http://localhost:8077');
-define('KLIMAPI_WOOCOMMERCE_CERTIFICATES_ENDPOINT', 'http://localhost:3001');
+define('KLIMAPI_WOOCOMMERCE_API_ENDPOINT', 'https://api.klimapi.com');
+define('KLIMAPI_WOOCOMMERCE_CERTIFICATES_ENDPOINT', 'https://certificates.klimahelden.eu');
 
 /**
  * The code that runs during plugin activation.
