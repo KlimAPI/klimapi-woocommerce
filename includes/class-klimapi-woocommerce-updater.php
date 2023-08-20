@@ -18,12 +18,12 @@ class Klimapi_Woocommerce_Updater
     public $cache_key;
     public $cache_allowed;
 
-    public function __construct($version)
+    public function __construct($version, $plugin_name)
     {
 
-        $this->plugin_slug   = plugin_basename(__DIR__);
+        $this->plugin_slug   = $plugin_name;
         $this->version       = $version;
-        $this->cache_key     = 'klimapi_custom_update';
+        $this->cache_key     = 'klimapi_custom_updater';
         $this->cache_allowed = true;
 
         add_filter('plugins_api', array( $this, 'info' ), 20, 3);
@@ -65,7 +65,7 @@ class Klimapi_Woocommerce_Updater
 
     function info($res, $action, $args)
     {
-
+        
         // do nothing if you're not getting plugin information right now
         if ('plugin_information' !== $action) {
             return $res;
@@ -129,7 +129,7 @@ class Klimapi_Woocommerce_Updater
         ) {
             $res = new stdClass();
             $res->slug = $this->plugin_slug;
-            $res->plugin = plugin_basename(__FILE__);
+            $res->plugin = $this->plugin_slug . '/' . $this->plugin_slug . '.php';
             $res->new_version = $remote->version;
             $res->tested = $remote->tested;
             $res->package = $remote->download_url;

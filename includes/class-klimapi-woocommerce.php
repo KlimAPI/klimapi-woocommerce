@@ -163,7 +163,7 @@ class Klimapi_Woocommerce
     private function plugin_updater()
     {
 
-        new Klimapi_Woocommerce_Updater($this->get_version());
+        new Klimapi_Woocommerce_Updater($this->get_version(), $this->get_plugin_name());
     }
 
     /**
