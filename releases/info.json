@@ -2,7 +2,7 @@
   "name" : "KlimAPI WooCommerce",
   "slug" : "klimapi-woocommerce",
   "author" : "<a href='https://klimapi.com'>KlimAPI Team</a>",
-  "author_profile" : "http://profiles.wordpress.org/rudrastyh",
+  "author_profile" : "https://profiles.wordpress.org/emilow/",
   "version" : "1.0.1",
   "download_url" : "https://github.com/KlimAPI/klimapi-woocommerce/releases/latest/download/klimapi-woocommerce.zip",
   "requires" : "5.4",
