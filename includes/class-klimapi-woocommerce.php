@@ -80,6 +80,7 @@ class Klimapi_Woocommerce
         $this->set_locale();
         $this->define_admin_hooks();
         $this->define_public_hooks();
+        $this->plugin_updater();
     }
 
     /**
@@ -114,6 +115,12 @@ class Klimapi_Woocommerce
         require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-klimapi-woocommerce-i18n.php';
 
         /**
+         * The class responsible for defining internationalization functionality
+         * of the plugin.
+         */
+        require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-klimapi-woocommerce-updater.php';
+
+        /**
          * The class responsible for defining all actions that occur in the admin area.
          */
         require_once plugin_dir_path(dirname(__FILE__)) . 'admin/class-klimapi-woocommerce-admin.php';
@@ -142,6 +149,21 @@ class Klimapi_Woocommerce
         $plugin_i18n = new Klimapi_Woocommerce_i18n();
 
         $this->loader->add_action('plugins_loaded', $plugin_i18n, 'load_plugin_textdomain');
+    }
+
+    /**
+     * Define the locale for this plugin for internationalization.
+     *
+     * Uses the Klimapi_Woocommerce_i18n class in order to set the domain and to register the hook
+     * with WordPress.
+     *
+     * @since    1.0.0
+     * @access   private
+     */
+    private function plugin_updater()
+    {
+
+        new Klimapi_Woocommerce_Updater($this->get_version());
     }
 
     /**
