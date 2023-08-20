@@ -65,7 +65,7 @@ class Klimapi_Woocommerce_Updater
 
     function info($res, $action, $args)
     {
-        
+
         // do nothing if you're not getting plugin information right now
         if ('plugin_information' !== $action) {
             return $res;
