@@ -28,7 +28,7 @@ class Klimapi_Woocommerce_Admin
      *
      * @since    1.0.0
      * @access   private
-     * @var      string    $plugin_name    The ID of this plugin.
+     * @var      string $plugin_name The ID of this plugin.
      */
     private $plugin_name;
 
@@ -37,22 +37,62 @@ class Klimapi_Woocommerce_Admin
      *
      * @since    1.0.0
      * @access   private
-     * @var      string    $version    The current version of this plugin.
+     * @var      string $version The current version of this plugin.
      */
     private $version;
 
     /**
      * Initialize the class and set its properties.
      *
+     * @param string $plugin_name The name of this plugin.
+     * @param string $version The version of this plugin.
+     *
      * @since    1.0.0
-     * @param      string    $plugin_name       The name of this plugin.
-     * @param      string    $version    The version of this plugin.
      */
     public function __construct($plugin_name, $version)
     {
 
         $this->plugin_name = $plugin_name;
-        $this->version = $version;
+        $this->version     = $version;
+    }
+
+    static function klimapi_sanitize($input)
+    {
+        $sanitary_values = array();
+
+        if (isset($input['api_key'])) {
+            $sanitary_values['api_key'] = sanitize_text_field($input['api_key']);
+        }
+
+        if (isset($input['shop_key'])) {
+            $sanitary_values['shop_key'] = sanitize_text_field($input['shop_key']);
+        }
+
+        return $sanitary_values;
+    }
+
+    static function klimapi_section_info()
+    {
+    }
+
+    static function api_key_callback()
+    {
+        $klimapi_options = get_option('klimapi_options');
+
+        printf(
+            '<input class="regular-text" type="password" name="klimapi_options[api_key]" id="api_key" value="%s" required>',
+            isset($klimapi_options['api_key']) ? esc_attr($klimapi_options['api_key']) : ''
+        );
+    }
+
+    static function shop_key_callback()
+    {
+        $klimapi_options = get_option('klimapi_options');
+
+        printf(
+            '<input class="regular-text" type="text" name="klimapi_options[shop_key]" id="shop_key" value="%s" required>',
+            isset($klimapi_options['shop_key']) ? esc_attr($klimapi_options['shop_key']) : ''
+        );
     }
 
     /**
@@ -163,51 +203,12 @@ class Klimapi_Woocommerce_Admin
         );
     }
 
-    static function klimapi_sanitize($input)
-    {
-        $sanitary_values = array();
-
-        if (isset($input['api_key'])) {
-            $sanitary_values['api_key'] = sanitize_text_field($input['api_key']);
-        }
-
-        if (isset($input['shop_key'])) {
-            $sanitary_values['shop_key'] = sanitize_text_field($input['shop_key']);
-        }
-
-        return $sanitary_values;
-    }
-
-    static function klimapi_section_info()
-    {
-    }
-
-    static function api_key_callback()
-    {
-        $klimapi_options = get_option('klimapi_options');
-
-        printf(
-            '<input class="regular-text" type="password" name="klimapi_options[api_key]" id="api_key" value="%s" required>',
-            isset($klimapi_options['api_key']) ? esc_attr($klimapi_options['api_key']) : ''
-        );
-    }
-
-    static function shop_key_callback()
-    {
-        $klimapi_options = get_option('klimapi_options');
-
-        printf(
-            '<input class="regular-text" type="text" name="klimapi_options[shop_key]" id="shop_key" value="%s" required>',
-            isset($klimapi_options['shop_key']) ? esc_attr($klimapi_options['shop_key']) : ''
-        );
-    }
-
     public function refresh_settings($value)
     {
 
         if (is_string($value['api_key']) && is_string($value['shop_key']) && preg_match('/^[a-f\d]{8}(-[a-f\d]{4}){4}[a-f\d]{8}$/i', $value['shop_key']) === 1) {
             //Upload products
-            $products = wc_get_products(array( 'limit' => -1 ));
+            $products = wc_get_products(array( 'limit' => - 1 ));
 
             foreach (array_chunk($products, 30) as $products_chunk) {
                 $this->upload_products($products_chunk, $value['api_key'], $value['shop_key']);
@@ -221,21 +222,21 @@ class Klimapi_Woocommerce_Admin
     {
         wp_remote_post(KLIMAPI_WOOCOMMERCE_API_ENDPOINT . '/v1/shops/' . $shop_key . '/sync/bulk', [
             'blocking' => false,
-            'headers' => [
+            'headers'  => [
                 'content-type' => 'application/json',
-                'X-API-KEY' => $api_key,
+                'X-API-KEY'    => $api_key,
             ],
-            'body' => json_encode(array_map(function ($product) {
+            'body'     => json_encode(array_map(function ($product) {
                 return [
-                    'product_id' => $product->get_id(),
-                    'name' => $product->get_name(),
+                    'product_id'  => $product->get_id(),
+                    'name'        => $product->get_name(),
                     'description' => $product->get_short_description(),
-                    'price' => wc_format_decimal($product->get_price(), 2),
+                    'price'       => wc_format_decimal($product->get_price(), 2),
 
                     'categories' => wc_get_object_terms($product->get_id(), 'product_cat', 'name'),
-                    'tags' => wc_get_object_terms($product->get_id(), 'product_tag', 'name'),
+                    'tags'       => wc_get_object_terms($product->get_id(), 'product_tag', 'name'),
 
-                    'weight' => $product->get_weight() ? wc_format_decimal($product->get_weight(), 2) : null,
+                    'weight'      => $product->get_weight() ? wc_format_decimal($product->get_weight(), 2) : null,
                     'weight_unit' => $product->get_weight() ? get_option('woocommerce_weight_unit') : null,
 
                     'made_in' => $product->get_meta('country_of_origin'),

@@ -7,14 +7,14 @@
  *
  * @wordpress-plugin
  * Plugin Name:       KlimAPI WooCommerce
- * Plugin URI:        https://klimapi.com/resources/plugins/woocommerce
+ * Plugin URI:        https://klimapi.com/de/resources/plugins/woocommerce
  * Description:       Calculate and compensate the unavoidable CO2 emissions of your products and services together with your customers.
  * Version:           1.0.0
  * Author:            KlimAPI Team
  * Author URI:        https://klimapi.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       klimapi-woocommerce
+ * Text Domain:       klimapi
  * Domain Path:       /languages
  */
 
