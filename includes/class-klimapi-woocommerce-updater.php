@@ -24,7 +24,7 @@ class Klimapi_Woocommerce_Updater
         $this->plugin_slug   = plugin_basename(__DIR__);
         $this->version       = $version;
         $this->cache_key     = 'klimapi_custom_update';
-        $this->cache_allowed = false;
+        $this->cache_allowed = true;
 
         add_filter('plugins_api', array( $this, 'info' ), 20, 3);
         add_filter('site_transient_update_plugins', array( $this, 'update' ));
@@ -65,9 +65,6 @@ class Klimapi_Woocommerce_Updater
 
     function info($res, $action, $args)
     {
-
-        // print_r( $action );
-        // print_r( $args );
 
         // do nothing if you're not getting plugin information right now
         if ('plugin_information' !== $action) {
