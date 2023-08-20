@@ -1,1 +1,0 @@
-# klimapi-woocommerce
