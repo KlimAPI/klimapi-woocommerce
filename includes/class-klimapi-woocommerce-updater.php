@@ -1,10 +1,9 @@
 <?php
 
 /**
- * Define the internationalization functionality.
+ * Define the update functionality.
  *
- * Loads and defines the internationalization files for this plugin
- * so that it is ready for translation.
+ * Checks for updates in the official repository.
  *
  * @since      1.0.0
  * @package    Klimapi_Woocommerce
@@ -39,7 +38,7 @@ class Klimapi_Woocommerce_Updater
 
         if (false === $remote || ! $this->cache_allowed) {
             $remote = wp_remote_get(
-                'https://github.com/KlimAPI/klimapi-woocommerce/blob/main/releases/info.json',
+                'https://raw.githubusercontent.com/KlimAPI/klimapi-woocommerce/main/releases/info.json',
                 array(
                     'timeout' => 10,
                     'headers' => array(
