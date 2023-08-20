@@ -1,0 +1,99 @@
+.klimapi-wrapper {
+    width: 100%;
+    margin: 10px 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 0;
+}
+
+.klimapi-wrapper-thankyou {
+    width: 100%;
+    margin: 20px 0;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 0;
+}
+
+.klimapi-project {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 5px #ccc;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.klimapi-project .klimapi-project-header.klimapi-project-selected {
+    border: 4px solid #42bea3;
+}
+
+.klimapi-project .klimapi-project-header.klimapi-project-selected.klimapi-project-disabled {
+    cursor: initial !important;
+}
+
+.klimapi-project .klimapi-project-header {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 120px;
+    height: 100%;
+
+    border: 4px solid #f8f8f8;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.klimapi-project .klimapi-project-header .klimapi-project-header-title {
+    padding: 10px 10px 0px 10px;
+    color: #fafafa;
+    font-size: 17px;
+    text-shadow: 1px 1px 8px rgba(0,0,0,1);
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.klimapi-project .klimapi-project-header .klimapi-project-header-co2 {
+    padding: 0px 10px 10px 10px;
+    color: #fafafa;
+    font-size: 14px;
+    text-shadow: 1px 1px 8px rgba(0,0,0,1);
+}
+
+*[data-klimapi-hint] {
+    margin: 10px 0 0 0;
+    font-size: 13px;
+    color: #999;
+    text-align: right;
+}
+
+*[data-klimapi-hint] a, .klimapi-thankyou-link {
+    color: #42bea3;
+    text-decoration: none !important;
+    font-weight: bold;
+}
+
+*[data-klimapi-hint] a:hover, a.klimapi-thankyou-link:hover {
+    color: #2e8672;
+}
+
+.klimapi-thankyou-title {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.klimapi-thankyou-text {
+    font-size: 15px;
+    margin-bottom: 10px;
+}

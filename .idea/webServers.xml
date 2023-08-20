@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="87866c36-ce6e-45df-918e-78e8789eaf90" name="woocommerce" url="http://localhost/woocommerce">
+        <fileTransfer mountedRoot="/Applications/XAMPP/xamppfiles/htdocs/woocommerce/wp-content/plugins/klimapi-woocommerce" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>
